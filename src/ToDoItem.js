@@ -2,9 +2,11 @@ import React from 'react';
 
 class ToDoItem extends React.Component{
     render(){
-        const toDo = this.props.details;
+        const {item} = this.props.details;
         return(
-            <div></div>
+            <li>
+                <p>{item}</p>
+            </li>
         );
     };
 }

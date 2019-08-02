@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from './Header';
 import ToDoList from './ToDoList';
 import ToDoItem from './ToDoItem';
 import './App.css';
@@ -13,14 +14,18 @@ class App extends React.Component{
     this.setState({
       items : toDoItems
     });
-    console.log(this.state.items);
   }
   render() {
     return(
       <div className="App">
+        <Header title="To-Do List" />
         <ToDoList addToDo={this.addToDo} />
         <ul>
-          
+          {Object.keys(this.state.items)
+            .map(key => <ToDoItem 
+            key={key} 
+            details={this.state.items[key]} 
+            />)}
         </ul>
       </div>
     );
