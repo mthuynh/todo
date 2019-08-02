@@ -15,6 +15,7 @@ class App extends React.Component{
       items : toDoItems
     });
   }
+  removeToDo = item => {}
   render() {
     return(
       <div className="App">
@@ -24,7 +25,9 @@ class App extends React.Component{
           {Object.keys(this.state.items)
             .map(key => <ToDoItem 
             key={key} 
-            details={this.state.items[key]} 
+            index={key}
+            details={this.state.items[key]}
+            removeToDo={this.removeToDo} 
             />)}
         </ul>
       </div>

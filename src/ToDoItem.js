@@ -6,6 +6,7 @@ class ToDoItem extends React.Component{
         return(
             <li>
                 <p>{item}</p>
+                <span><button removeToDo={this.props.removeToDo}>x</button></span>
             </li>
         );
     };
