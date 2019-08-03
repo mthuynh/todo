@@ -12,13 +12,11 @@ class ToDoList extends React.Component{
     }
     render(){
         return(
-            <div className="todoListMain">
-                <div className="header">
-                    <form onSubmit={this.createToDo}>
-                        <input placeholder="Task" ref={this.toDoItemRef}/>
-                        <button type="submit"> Add Task </button>
-                    </form>
-                </div>
+            <div className="toDoListForm">
+                <form onSubmit={this.createToDo}>
+                    <input className="toDoListForm__input" placeholder="Task" ref={this.toDoItemRef}/>
+                    <button className="toDoListForm__button" type="submit"> Add Task </button>
+                </form>
             </div>
         );
     };

@@ -29,7 +29,7 @@ class App extends React.Component{
       <div className="App">
         <Header title="To-Do List" />
         <ToDoList addToDo={this.addToDo} />
-        <ul>
+        <ul className="toDoList">
           {Object.keys(this.state.items)
             .map(key => <ToDoItem 
             key={key} 
