@@ -6,7 +6,9 @@ import './App.css';
 
 class App extends React.Component{
   state = {
-    items: []
+    items: [],
+    completeItems: [],
+    removedItems: []
   }
   addToDo = item => {
     const toDoItems = [...this.state.items];
@@ -15,7 +17,13 @@ class App extends React.Component{
       items : toDoItems
     });
   }
-  removeToDo = item => {}
+  removeToDo = item => {
+    const toDoItems = [...this.state.items];
+    toDoItems.splice(item);
+    this.setState({
+      items : toDoItems
+    });
+  }
   render() {
     return(
       <div className="App">
