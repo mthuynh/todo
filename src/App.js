@@ -19,7 +19,7 @@ class App extends React.Component{
   }
   removeToDo = item => {
     const toDoItems = [...this.state.items];
-    toDoItems.splice(item);
+    toDoItems.splice(item,1);
     this.setState({
       items : toDoItems
     });
