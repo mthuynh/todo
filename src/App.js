@@ -7,7 +7,7 @@ import './App.css';
 class App extends React.Component{
   state = {
     items: [],
-    completeItems: [],
+    completeItems: 0,
     removedItems: []
   }
   addToDo = item => {
@@ -24,6 +24,15 @@ class App extends React.Component{
       items : toDoItems
     });
   }
+  completeToDo = item => {
+    const completedToDos = this.state.completeItems + 1
+    const toDoItems = [...this.state.items];
+    toDoItems.splice(item,1);
+    this.setState({
+      items : toDoItems,
+      completeItems: completedToDos
+    });
+  }
   render() {
     return(
       <div className="App">
@@ -36,8 +45,10 @@ class App extends React.Component{
             index={key}
             details={this.state.items[key]}
             removeToDo={this.removeToDo} 
+            completeToDo={this.completeToDo}
             />)}
         </ul>
+        <div class="completed">Complete: {this.state.completeItems}</div>
       </div>
     );
   };
